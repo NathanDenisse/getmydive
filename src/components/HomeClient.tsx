@@ -88,15 +88,6 @@ export default function HomeClient({ spots, total }: Props) {
   const clubsCarouselRef = useRef<HTMLDivElement>(null);
   const experiencesCarouselRef = useRef<HTMLDivElement>(null);
 
-  if (!spots || spots.length === 0) {
-    return (
-      <div className="no-results">
-        <h2>Aucun spot disponible</h2>
-        <p>Veuillez réessayer plus tard.</p>
-      </div>
-    );
-  }
-
   // Observer pour détecter quand la carte est visible
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -189,6 +180,15 @@ export default function HomeClient({ spots, total }: Props) {
       setFilter(key as keyof FilterState, value);
     });
   };
+
+  if (!spots || spots.length === 0) {
+    return (
+      <div className="no-results">
+        <h2>Aucun spot disponible</h2>
+        <p>Veuillez réessayer plus tard.</p>
+      </div>
+    );
+  }
 
   return (
     <main className="home-container">
