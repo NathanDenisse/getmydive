@@ -3,7 +3,7 @@ import { useState, useMemo, useRef, useEffect } from "react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import Image from "next/image";
-import { FiChevronLeft, FiChevronRight, FiMapPin } from "react-icons/fi";
+import { FiChevronLeft, FiChevronRight, FiMapPin, FiMap } from "react-icons/fi";
 
 const MapSection = dynamic(() => import("@/components/sections/MapSection"), { ssr: false });
 
@@ -151,11 +151,16 @@ export default function SpotsPageClient({ spots, currentPage, totalPages, allSpo
           onSearch={setSearchQuery}
           onFilter={() => { }}
         />
-        <div className="mb-8 flex justify-center">
-          <button className="btn btn-primary" onClick={() => setShowMap(m => !m)}>
-            {showMap ? "Masquer la carte" : "Afficher la carte"}
-          </button>
-        </div>
+        {/* Bouton flottant mobile */}
+        <button
+          className="btn btn-primary"
+          onClick={() => setShowMap(m => !m)}
+          aria-label={showMap ? "Masquer la carte" : "Afficher la carte"}
+        >
+          <FiMap />
+          <span>{showMap ? "Masquer la carte" : "Carte"}</span>
+        </button>
+        {/* Fin bouton flottant */}
 
         {countryList.map((country, idx) => {
           const countrySpots = assignRandomImagesDeterministic(spotsByCountry[country].sort((a, b) => a.name.localeCompare(b.name)), RANDOM_SPOT_IMAGES);

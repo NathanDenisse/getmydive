@@ -247,8 +247,8 @@ export default function HomeClient({ spots, total }: Props) {
     <main className="home-container">
       {/* En-tête */}
       <header className="home-header">
-        <h1 className="home-title">Bienvenue sur GetMyDive 🌊</h1>
-        <p className="home-subtitle">Découvrez les meilleurs spots de plongée du monde</p>
+        <h1 className="home-title">Bienvenue sur GetMyDive</h1>
+        <p className="home-subtitle home-subtitle--small">Découvrez les meilleurs spots de plongée du monde</p>
       </header>
 
       {/* Barre de recherche et filtres */}
@@ -276,6 +276,12 @@ export default function HomeClient({ spots, total }: Props) {
           ))}
         </div>
       </section>
+
+      {/* Indicateur clubs */}
+      <div className="clubs-indicator">
+        <span className="clubs-indicator-arrow">↓</span>
+        <span className="clubs-indicator-text">Découvrez aussi les clubs de plongée plus bas !</span>
+      </div>
 
       {/* Carrousel des clubs */}
       <section className="carousel-section">
