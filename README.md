@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# GetMyDive - Site de Plongée
 
-## Getting Started
+Ceci est un projet [Next.js](https://nextjs.org) pour un site web de plongée avec des spots, clubs et expériences.
 
-First, run the development server:
+## 🚀 Démarrage Rapide
+
+Pour lancer le serveur de développement :
 
 ```bash
 npm run dev
-# or
+# ou
 yarn dev
-# or
+# ou
 pnpm dev
-# or
+# ou
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Ouvrez [http://localhost:3000](http://localhost:3000) dans votre navigateur pour voir le résultat.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🛠️ Technologies Utilisées
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Next.js 15** - Framework React
+- **TypeScript** - Typage statique
+- **Tailwind CSS** - Styling
+- **Supabase** - Base de données
+- **Leaflet** - Cartes interactives
+- **React Icons** - Icônes
 
-## Learn More
+## 📁 Structure du Projet
 
-To learn more about Next.js, take a look at the following resources:
+```
+├── app/                 # Pages et routes Next.js
+├── src/
+│   ├── components/      # Composants React
+│   ├── data/           # Données JSON
+│   ├── hooks/          # Hooks personnalisés
+│   ├── lib/            # Utilitaires et configurations
+│   └── types/          # Types TypeScript
+├── public/             # Assets statiques
+└── supabase/           # Configuration Supabase
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🌐 Déploiement
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Déploiement sur Netlify
 
-## Deploy on Vercel
+Ce projet est configuré pour être déployé automatiquement sur Netlify via GitHub.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+#### Étapes de configuration :
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. **Créer un dépôt GitHub** :
+   ```bash
+   git remote add origin https://github.com/votre-username/getmydive.git
+   git push -u origin main
+   ```
+
+2. **Connecter à Netlify** :
+   - Allez sur [netlify.com](https://netlify.com)
+   - Cliquez sur "New site from Git"
+   - Connectez votre compte GitHub
+   - Sélectionnez votre dépôt `getmydive`
+   - Les paramètres de build sont automatiquement configurés via `netlify.toml`
+
+3. **Variables d'environnement** (si nécessaire) :
+   - Dans les paramètres Netlify, ajoutez vos variables d'environnement Supabase
+
+#### Déploiement automatique :
+- Chaque push sur la branche `main` déclenche automatiquement un nouveau déploiement
+- Les modifications sont déployées en quelques minutes
+
+## 📚 Ressources
+
+- [Documentation Next.js](https://nextjs.org/docs)
+- [Documentation Netlify](https://docs.netlify.com)
+- [Documentation Supabase](https://supabase.com/docs)
