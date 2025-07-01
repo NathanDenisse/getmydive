@@ -22,11 +22,13 @@ export default function SpotCard({ spot, randomImage }: Props) {
     animals,
   } = spot;
 
+  console.log('SpotCard image debug:', { image, randomImage, slug });
+
   return (
     <Link href={`/spots/${slug}`} className="spot-card-link">
       <div className="spot-card-image-container">
         <Image
-          src={image && image.trim() !== '' ? image : randomImage || '/images/default-spot.jpg'}
+          src={randomImage || '/images/default-spot.jpg'}
           alt={name}
           fill
           className="spot-card-image"
