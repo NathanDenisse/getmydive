@@ -16,7 +16,8 @@ export async function generateStaticParams() {
   return slugs.slice(0, 1000).map((slug) => ({ slug }))
 }
 
-export default async function SpotPage({ params }: Props) {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export default async function Page({ params }: any) {
   const spot = await getSpotBySlug(params.slug);
 
   if (!spot) {
