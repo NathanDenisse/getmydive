@@ -246,7 +246,7 @@ export default function HomeClient({ spots, total }: Props) {
   return (
     <main className="home-container">
       {/* En-tête */}
-      <header className="home-header">
+      <header className="home-header compact-header">
         <h1 className="home-title">Bienvenue sur GetMyDive</h1>
         <p className="home-subtitle home-subtitle--small">Découvrez les meilleurs spots de plongée du monde</p>
       </header>
@@ -263,9 +263,8 @@ export default function HomeClient({ spots, total }: Props) {
       <section className="carousel-section">
         <div className="carousel-header">
           <h2 className="carousel-title">Spots populaires</h2>
-          <Link href="/spots" className="view-all-button">
-            Voir tous les spots
-            <FiChevronRight />
+          <Link href="/spots" className="mini-link-button">
+            Tous les spots <FiChevronRight />
           </Link>
         </div>
         <div className="carousel-container" ref={spotsCarouselRef}>
@@ -287,9 +286,8 @@ export default function HomeClient({ spots, total }: Props) {
       <section className="carousel-section">
         <div className="carousel-header">
           <h2 className="carousel-title">Clubs de plongée</h2>
-          <Link href="/clubs" className="view-all-button">
-            Voir tous les clubs
-            <FiChevronRight />
+          <Link href="/clubs" className="mini-link-button">
+            Tous les clubs <FiChevronRight />
           </Link>
         </div>
         <div className="carousel-container" ref={clubsCarouselRef}>
@@ -305,9 +303,8 @@ export default function HomeClient({ spots, total }: Props) {
       <section className="carousel-section">
         <div className="carousel-header">
           <h2 className="carousel-title">Expériences de plongée</h2>
-          <Link href="/experiences" className="view-all-button">
-            Voir toutes les expériences
-            <FiChevronRight />
+          <Link href="/experiences" className="mini-link-button">
+            Toutes les exp. <FiChevronRight />
           </Link>
         </div>
         <div className="carousel-container" ref={experiencesCarouselRef}>
@@ -339,13 +336,12 @@ export default function HomeClient({ spots, total }: Props) {
       {/* Bouton flottant pour la carte */}
       {!isMapVisible && (
         <button
-          className="floating-map-button"
+          className="floating-map-button fab-map-btn"
           onClick={scrollToMap}
           type="button"
           aria-label="Afficher la carte"
         >
-          <FiMapPin style={{ fontSize: 18, marginRight: 6 }} />
-          <span style={{ flex: 1, textAlign: 'center' }}>Carte</span>
+          <FiMapPin style={{ fontSize: 22 }} />
         </button>
       )}
     </main>
