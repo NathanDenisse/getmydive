@@ -26,7 +26,7 @@ export default function SpotCard({ spot, randomImage }: Props) {
     <Link href={`/spots/${slug}`} className="spot-card-link">
       <div className="spot-card-image-container">
         <Image
-          src={image || randomImage || '/images/default-spot.jpg'}
+          src={image && image.trim() !== '' ? image : randomImage || '/images/default-spot.jpg'}
           alt={name}
           fill
           className="spot-card-image"

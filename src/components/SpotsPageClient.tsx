@@ -23,24 +23,20 @@ interface SpotWithRandomImage extends Spot {
   randomImage?: string;
 }
 
-// Fonction utilitaire pour mélanger un tableau (Fisher-Yates)
-function shuffleArray<T>(array: T[]): T[] {
-  const arr = [...array];
-  for (let i = arr.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [arr[i], arr[j]] = [arr[j], arr[i]];
+// Fonction de hash simple (djb2)
+function hashString(str: string): number {
+  let hash = 5381;
+  for (let i = 0; i < str.length; i++) {
+    hash = ((hash << 5) + hash) + str.charCodeAt(i);
   }
-  return arr;
+  return Math.abs(hash);
 }
 
-function assignRandomImagesStable(spots: Spot[], images: string[]): SpotWithRandomImage[] {
-  const shuffled = shuffleArray(images);
-  let imgIdx = 0;
-  return spots.map((spot, i) => {
+function assignRandomImagesDeterministic(spots: Spot[], images: string[]): SpotWithRandomImage[] {
+  return spots.map((spot) => {
     if (spot.image) return { ...spot, randomImage: undefined };
-    const img = shuffled[imgIdx % shuffled.length];
-    imgIdx++;
-    return { ...spot, randomImage: img };
+    const idx = hashString(spot.slug || spot.name || Math.random().toString()) % images.length;
+    return { ...spot, randomImage: images[idx] };
   });
 }
 
@@ -136,7 +132,7 @@ export default function SpotsPageClient({ spots, currentPage, totalPages, allSpo
         </div>
 
         {countryList.map((country, idx) => {
-          const countrySpots = assignRandomImagesStable(spotsByCountry[country].sort((a, b) => a.name.localeCompare(b.name)), RANDOM_SPOT_IMAGES);
+          const countrySpots = assignRandomImagesDeterministic(spotsByCountry[country].sort((a, b) => a.name.localeCompare(b.name)), RANDOM_SPOT_IMAGES);
           return (
             <div
               key={country}
