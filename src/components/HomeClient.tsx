@@ -78,6 +78,16 @@ function getExampleSpots(spots: Spot[]) {
 const PREVIEW_COUNT = 10;
 
 export default function HomeClient({ spots, total }: Props) {
+  const [showMap, setShowMap] = useLocalStorage<boolean>(CACHE_KEYS.SHOW_MAP, true);
+  const { query, filteredSpots, handleSearch, clearSearch } = useSearch(spots);
+  const { filters, setFilter, resetFilters } = useFilters();
+  const mapSectionRef = useRef<HTMLDivElement>(null);
+  const [isMapVisible, setIsMapVisible] = useState(false);
+  // Références pour les carrousels
+  const spotsCarouselRef = useRef<HTMLDivElement>(null);
+  const clubsCarouselRef = useRef<HTMLDivElement>(null);
+  const experiencesCarouselRef = useRef<HTMLDivElement>(null);
+
   if (!spots || spots.length === 0) {
     return (
       <div className="no-results">
@@ -86,17 +96,6 @@ export default function HomeClient({ spots, total }: Props) {
       </div>
     );
   }
-
-  const [showMap, setShowMap] = useLocalStorage<boolean>(CACHE_KEYS.SHOW_MAP, true);
-  const { query, filteredSpots, handleSearch, clearSearch } = useSearch(spots);
-  const { filters, setFilter, resetFilters } = useFilters();
-  const mapSectionRef = useRef<HTMLDivElement>(null);
-  const [isMapVisible, setIsMapVisible] = useState(false);
-
-  // Références pour les carrousels
-  const spotsCarouselRef = useRef<HTMLDivElement>(null);
-  const clubsCarouselRef = useRef<HTMLDivElement>(null);
-  const experiencesCarouselRef = useRef<HTMLDivElement>(null);
 
   // Observer pour détecter quand la carte est visible
   useEffect(() => {
