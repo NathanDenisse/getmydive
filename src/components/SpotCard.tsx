@@ -22,13 +22,15 @@ export default function SpotCard({ spot, randomImage }: Props) {
     animals,
   } = spot;
 
-  console.log('SpotCard image debug:', { image, randomImage, slug });
+  const isDefault = !image || image.trim() === '' || image.includes('default-spot.jpg');
+  const imageToShow = isDefault ? randomImage || '/images/default-spot.jpg' : image;
+  console.log('SpotCard image debug:', { image, randomImage, slug, imageToShow });
 
   return (
     <Link href={`/spots/${slug}`} className="spot-card-link">
       <div className="spot-card-image-container">
         <Image
-          src={randomImage || '/images/default-spot.jpg'}
+          src={imageToShow}
           alt={name}
           fill
           className="spot-card-image"
