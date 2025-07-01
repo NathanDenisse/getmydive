@@ -57,9 +57,9 @@ function hashString(str: string): number {
 }
 
 function assignRandomImagesDeterministic(spots: Spot[], images: string[]): SpotWithRandomImage[] {
-  return spots.map((spot) => {
-    if (spot.image) return { ...spot, randomImage: undefined };
-    const idx = hashString(spot.slug || spot.name || Math.random().toString()) % images.length;
+  return spots.map((spot, i) => {
+    const key = spot.slug && spot.slug.trim() !== '' ? spot.slug : (spot.name || '') + i;
+    const idx = hashString(key) % images.length;
     return { ...spot, randomImage: images[idx] };
   });
 }
