@@ -932,8 +932,8 @@ button:hover,
   }
 
   .carousel-section {
-    padding: 0.2rem 0;
-    margin-bottom: 0.2rem;
+    padding: 0.1rem 0;
+    margin-bottom: 0.1rem;
     background: transparent;
   }
 
@@ -942,35 +942,52 @@ button:hover,
   }
 
   .carousel-title {
-    font-size: 0.93rem;
-    font-weight: 500;
+    font-size: 1rem;
+    font-weight: 600;
     margin-bottom: 0.1rem;
   }
 
   .carousel-container {
-    gap: 0.1rem;
-    padding-bottom: 0.05rem;
-    overflow-x: hidden;
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 0.7rem;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .carousel-container::-webkit-scrollbar {
+    display: none;
   }
 
   .carousel-item {
-    width: 96vw;
-    min-width: 96vw;
-    max-width: 96vw;
-    margin: 0.2rem auto;
-    padding: 0;
-    border-radius: 10px;
-    box-shadow: 0 1px 3px rgba(44, 62, 80, 0.04);
+    width: 70vw;
+    min-width: 70vw;
+    max-width: 70vw;
+    height: auto;
+    margin: 0;
+    scroll-snap-align: start;
+    border-radius: 12px;
+    box-shadow: 0 1px 6px rgba(44, 62, 80, 0.07);
     background: #fff;
+    transition: transform 0.13s, box-shadow 0.13s;
+  }
+
+  .carousel-item:active {
+    transform: scale(0.97);
+    box-shadow: 0 4px 18px rgba(44, 62, 80, 0.13);
   }
 
   .spot-card-link,
   .club-card-link,
   .experience-card-link {
     width: 100%;
-    margin: 0.2rem auto;
-    box-shadow: 0 1px 3px rgba(44, 62, 80, 0.04);
-    border-radius: 10px;
+    border-radius: 12px;
+    margin: 0;
+    box-shadow: 0 1px 6px rgba(44, 62, 80, 0.07);
     padding: 0;
     display: block;
   }
@@ -978,58 +995,32 @@ button:hover,
   .spot-card-image-container,
   .club-card-image-container,
   .experience-card-image-container {
-    height: 60px;
-    border-radius: 10px 10px 0 0;
+    height: 70px;
+    border-radius: 12px 12px 0 0;
     overflow: hidden;
   }
 
   .spot-card-content,
   .club-card-content,
   .experience-card-content {
-    padding: 0.3rem;
-  }
-
-  .spot-card-title,
-  .club-card-title,
-  .experience-card-title {
-    font-size: 0.85rem;
-    font-weight: 600;
-    margin-bottom: 0.05rem;
-  }
-
-  .spot-card-desc,
-  .club-card-desc,
-  .experience-card-desc {
-    font-size: 0.7rem;
-    margin-bottom: 0.05rem;
-  }
-
-  .spot-card-country,
-  .club-card-location {
-    font-size: 0.65rem;
-  }
-
-  .spot-animal-badge,
-  .club-card-badge {
-    font-size: 0.6rem;
-    padding: 0.1rem 0.3rem;
+    padding: 0.4rem;
   }
 
   .mb-8,
   .mb-16,
   .mb-12 {
-    margin-bottom: 0.2rem !important;
+    margin-bottom: 0.1rem !important;
   }
 
   .home-header,
   .compact-header {
-    padding: 0.2rem 0 0.1rem 0;
+    padding: 0.1rem 0 0.05rem 0;
     margin-bottom: 0;
   }
 
   .clubs-indicator {
-    margin: 0.05rem 0 0.2rem 0;
-    font-size: 0.85rem;
+    margin: 0.1rem 0 0.2rem 0;
+    font-size: 0.9rem;
   }
 }
 
