@@ -359,8 +359,53 @@
     "location": "Playa del Carmen",
     "description": "Centre de plongée premium offrant des expériences personnalisées dans les cénotes et la barrière de corail. Équipe internationale d'instructeurs passionnés.",
     "image": "/club-dive-kingdom.jpg",
+    "coords": [
+      20.6296,
+      -87.0739
+    ],
     "trainingSchool": "PADI 5 Star IDC",
-    "rating": 4.8
+    "activity": "Plongée",
+    "price": "Élevé",
+    "rating": 4.8,
+    "reviews": [
+      {
+        "author": "Marie L.",
+        "comment": "Service premium, instructeurs excellents. Les cénotes sont magiques !",
+        "rating": 5
+      }
+    ],
+    "instructors": [
+      {
+        "name": "Carlos Rodriguez",
+        "experience": "15 ans",
+        "speciality": "Cénotes et récifs",
+        "bio": "Carlos est un expert des cénotes avec plus de 15 ans d'expérience. Il connaît chaque recoin de la Riviera Maya.",
+        "image": "/instructors-carlos.jpg"
+      }
+    ],
+    "experiences": [
+      {
+        "slug": "plongee-cenote-elite",
+        "title": "Plongée Cénote Elite",
+        "description": "Une expérience exclusive dans les plus beaux cénotes de la région. Eau cristalline et formations géologiques uniques.",
+        "price": "120€",
+        "level": "Intermédiaire",
+        "activity": "Plongée",
+        "animals": [
+          "Poissons d'eau douce",
+          "Formations géologiques"
+        ],
+        "image": "/experience-cenote-elite.jpg",
+        "rating": 4.9,
+        "reviews": [
+          {
+            "author": "Pierre D.",
+            "comment": "Expérience unique et service impeccable. À faire absolument !",
+            "rating": 5
+          }
+        ]
+      }
+    ]
   },
   {
     "slug": "oceanic-divers",
@@ -369,8 +414,53 @@
     "location": "Bali",
     "description": "Club familial spécialisé dans les plongées avec les raies mantas et les requins. Propose des formations de tous niveaux dans un cadre idyllique.",
     "image": "/club-oceanic.jpg",
+    "coords": [
+      -8.3405,
+      115.0920
+    ],
     "trainingSchool": "SSI Diamond",
-    "rating": 4.9
+    "activity": "Plongée",
+    "price": "Moyen",
+    "rating": 4.9,
+    "reviews": [
+      {
+        "author": "Thomas R.",
+        "comment": "Club familial parfait, équipe très professionnelle. Les mantas sont au rendez-vous !",
+        "rating": 5
+      }
+    ],
+    "instructors": [
+      {
+        "name": "Made Sari",
+        "experience": "8 ans",
+        "speciality": "Raies mantas et requins",
+        "bio": "Made est une passionnée qui adore partager sa connaissance de la faune locale.",
+        "image": "/instructors-made.jpg"
+      }
+    ],
+    "experiences": [
+      {
+        "slug": "plongee-mantas-bali",
+        "title": "Plongée avec Mantas à Bali",
+        "description": "Rencontrez les majestueuses raies mantas dans leur habitat naturel. Une expérience inoubliable.",
+        "price": "85€",
+        "level": "Intermédiaire",
+        "activity": "Plongée",
+        "animals": [
+          "Raies mantas",
+          "Requins de récif"
+        ],
+        "image": "/experience-mantas-bali.jpg",
+        "rating": 4.8,
+        "reviews": [
+          {
+            "author": "Emma S.",
+            "comment": "Incroyable ! Les mantas sont si gracieuses !",
+            "rating": 5
+          }
+        ]
+      }
+    ]
   },
   {
     "slug": "blue-depths",
@@ -379,8 +469,53 @@
     "location": "Ambergris Caye",
     "description": "Centre de plongée exclusif offrant des expéditions vers le Blue Hole et la barrière de corail. Équipement de pointe et bateaux confortables.",
     "image": "/club-blue.jpg",
+    "coords": [
+      17.9214,
+      -87.9611
+    ],
     "trainingSchool": "PADI 5 Star",
-    "rating": 4.7
+    "activity": "Plongée",
+    "price": "Élevé",
+    "rating": 4.7,
+    "reviews": [
+      {
+        "author": "Alexandre M.",
+        "comment": "Le Blue Hole est spectaculaire ! Équipement de pointe et service impeccable.",
+        "rating": 4.7
+      }
+    ],
+    "instructors": [
+      {
+        "name": "James Wilson",
+        "experience": "20 ans",
+        "speciality": "Plongée technique et Blue Hole",
+        "bio": "James est un expert du Blue Hole avec plus de 20 ans d'expérience. Il connaît chaque détail de ce site légendaire.",
+        "image": "/instructors-james.jpg"
+      }
+    ],
+    "experiences": [
+      {
+        "slug": "blue-hole-expedition",
+        "title": "Expédition Blue Hole",
+        "description": "Plongez dans le célèbre Blue Hole de Belize, un site classé au patrimoine mondial de l'UNESCO.",
+        "price": "150€",
+        "level": "Avancé",
+        "activity": "Plongée",
+        "animals": [
+          "Requins de récif",
+          "Poissons tropicaux"
+        ],
+        "image": "/experience-blue-hole.jpg",
+        "rating": 4.9,
+        "reviews": [
+          {
+            "author": "Sophie K.",
+            "comment": "Une expérience unique et mémorable. Le Blue Hole est à couper le souffle !",
+            "rating": 5
+          }
+        ]
+      }
+    ]
   },
   {
     "slug": "reef-explorers",
@@ -389,8 +524,54 @@
     "location": "Cozumel",
     "description": "Club spécialisé dans les plongées dérivantes sur la barrière méso-américaine. Instructeurs locaux expérimentés et service personnalisé.",
     "image": "/club-reef.jpg",
+    "coords": [
+      20.422983,
+      -86.922343
+    ],
     "trainingSchool": "PADI 5 Star IDC",
-    "rating": 4.6
+    "activity": "Plongée",
+    "price": "Moyen",
+    "rating": 4.6,
+    "reviews": [
+      {
+        "author": "Lucas P.",
+        "comment": "Plongées dérivantes exceptionnelles ! Équipe locale très compétente.",
+        "rating": 4.6
+      }
+    ],
+    "instructors": [
+      {
+        "name": "Miguel Torres",
+        "experience": "10 ans",
+        "speciality": "Plongées dérivantes",
+        "bio": "Miguel est un expert des courants de Cozumel et adore partager sa passion pour la plongée dérivante.",
+        "image": "/instructors-miguel.jpg"
+      }
+    ],
+    "experiences": [
+      {
+        "slug": "plongee-derivante-cozumel",
+        "title": "Plongée Dérivante Cozumel",
+        "description": "Explorez la barrière méso-américaine en plongée dérivante. Courants forts et faune abondante.",
+        "price": "75€",
+        "level": "Intermédiaire",
+        "activity": "Plongée",
+        "animals": [
+          "Raies mantas",
+          "Tortues",
+          "Poissons tropicaux"
+        ],
+        "image": "/experience-derivante-cozumel.jpg",
+        "rating": 4.7,
+        "reviews": [
+          {
+            "author": "Camille L.",
+            "comment": "Sensation de voler sous l'eau ! Faune incroyable.",
+            "rating": 4.8
+          }
+        ]
+      }
+    ]
   },
   {
     "slug": "bali-dive-center",
@@ -399,7 +580,52 @@
     "location": "Nusa Penida",
     "description": "Centre de plongée écologique engagé dans la protection des raies mantas. Propose des formations et des plongées responsables.",
     "image": "/club-bali.jpg",
+    "coords": [
+      -8.7274,
+      115.5444
+    ],
     "trainingSchool": "SSI Platinum",
-    "rating": 4.9
+    "activity": "Plongée",
+    "price": "Moyen",
+    "rating": 4.9,
+    "reviews": [
+      {
+        "author": "Emma R.",
+        "comment": "Centre éco-responsable, équipe passionnée. Protection des mantas au cœur de leur démarche.",
+        "rating": 5
+      }
+    ],
+    "instructors": [
+      {
+        "name": "Ketut Sari",
+        "experience": "12 ans",
+        "speciality": "Écologie marine et mantas",
+        "bio": "Ketut est un défenseur passionné de l'environnement marin et adore partager sa connaissance de la faune locale.",
+        "image": "/instructors-ketut.jpg"
+      }
+    ],
+    "experiences": [
+      {
+        "slug": "plongee-eco-mantas",
+        "title": "Plongée Éco avec Mantas",
+        "description": "Plongée responsable avec les raies mantas, dans le respect de leur habitat naturel.",
+        "price": "90€",
+        "level": "Intermédiaire",
+        "activity": "Plongée",
+        "animals": [
+          "Raies mantas",
+          "Poissons tropicaux"
+        ],
+        "image": "/experience-eco-mantas.jpg",
+        "rating": 4.9,
+        "reviews": [
+          {
+            "author": "Nicolas B.",
+            "comment": "Approche respectueuse et éducative. Les mantas sont magnifiques !",
+            "rating": 5
+          }
+        ]
+      }
+    ]
   }
 ]
