@@ -43,7 +43,8 @@ type Club = {
   }[];
 };
 
-export default async function Page({ params }: { params: { slug: string } }) {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export default async function Page({ params }: any) {
   const clubs = (clubsData as any[]).map((club) => ({
     ...club,
     coords: club.coords as [number, number],
