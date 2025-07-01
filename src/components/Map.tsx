@@ -1,17 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
-import "leaflet/dist/leaflet.css";
-import L from "leaflet";
-import type { LatLngExpression } from "leaflet";
-
-// Fix bug d'icône manquante
-delete (L.Icon.Default as any).prototype._getIconUrl;
-L.Icon.Default.mergeOptions({
-  iconRetinaUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png",
-  iconUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png",
-  shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
-});
 
 type Marker = {
   position: [number, number];
@@ -24,36 +13,45 @@ type MapProps = {
   zoom?: number;
 };
 
-const Map = ({ center, markers, zoom = 13 }: MapProps) => {
+// Composant Map interne qui utilise Leaflet
+const MapComponent = ({ center, markers, zoom = 13 }: MapProps) => {
   const [MapContainer, setMapContainer] = useState<any>(null);
   const [TileLayer, setTileLayer] = useState<any>(null);
   const [Marker, setMarker] = useState<any>(null);
   const [Popup, setPopup] = useState<any>(null);
 
-  console.log('Map props:', { center, markers, zoom });
-
   useEffect(() => {
     const loadLeaflet = async () => {
-      const L = await import("leaflet");
-      const { MapContainer, TileLayer, Marker, Popup } = await import("react-leaflet");
+      try {
+        // Import dynamique de Leaflet
+        const L = await import("leaflet");
+        const { MapContainer, TileLayer, Marker, Popup } = await import("react-leaflet");
 
-      console.log('Leaflet components loaded');
+        // Le CSS de Leaflet sera chargé via le fichier global
 
-      setMapContainer(MapContainer);
-      setTileLayer(TileLayer);
-      setMarker(Marker);
-      setPopup(Popup);
+        // Fix bug d'icône manquante
+        delete (L.Icon.Default as any).prototype._getIconUrl;
+        L.Icon.Default.mergeOptions({
+          iconRetinaUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png",
+          iconUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png",
+          shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
+        });
+
+        setMapContainer(MapContainer);
+        setTileLayer(TileLayer);
+        setMarker(Marker);
+        setPopup(Popup);
+      } catch (error) {
+        console.error('Erreur lors du chargement de Leaflet:', error);
+      }
     };
 
     loadLeaflet();
   }, []);
 
   if (!MapContainer || !TileLayer || !Marker || !Popup) {
-    console.log('Waiting for Leaflet components to load...');
     return <div>Chargement de la carte...</div>;
   }
-
-  console.log('Rendering map with markers:', markers);
 
   return (
     <div className="map-container">
@@ -75,5 +73,11 @@ const Map = ({ center, markers, zoom = 13 }: MapProps) => {
     </div>
   );
 };
+
+// Composant Map principal avec chargement dynamique
+const Map = dynamic(() => Promise.resolve(MapComponent), {
+  ssr: false,
+  loading: () => <div>Chargement de la carte...</div>
+});
 
 export default Map;

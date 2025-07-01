@@ -48,14 +48,16 @@ export default function ClubDetails({
   const expSectionRef = useRef<HTMLElement>(null);
   const [isExpVisible, setIsExpVisible] = useState(false);
   useEffect(() => {
-    const observer = new window.IntersectionObserver(
-      ([entry]) => setIsExpVisible(entry.isIntersecting),
-      { threshold: 0.2 }
-    );
-    if (expSectionRef.current) {
-      observer.observe(expSectionRef.current);
+    if (typeof window !== 'undefined') {
+      const observer = new window.IntersectionObserver(
+        ([entry]) => setIsExpVisible(entry.isIntersecting),
+        { threshold: 0.2 }
+      );
+      if (expSectionRef.current) {
+        observer.observe(expSectionRef.current);
+      }
+      return () => observer.disconnect();
     }
-    return () => observer.disconnect();
   }, []);
 
   // Créer un tableau d'images pour la galerie
