@@ -14,6 +14,27 @@ const SPOTS_PER_PAGE = 40;
 const CAROUSEL_SIZE = 10;
 const CAROUSEL_COUNT = 4;
 
+// Liste d'images aléatoires pour les spots (même que HomeClient)
+const RANDOM_SPOT_IMAGES = [
+  '/blue-hole.jpg', '/club-bali.jpg', '/club-blue.jpg', '/club-dive-kingdom.jpg', '/club-oceanic.jpg', '/club-reef.jpg', '/cozumel.jpg', '/experience-autonomy.jpg', '/experience-cenote.jpg', '/experience-discovery.jpg', '/experience-drift.jpg', '/experience-manta.jpg', '/fish.jpg', '/galapagos.jpg', '/great-barrier-reef.jpg', '/komodo.jpg', '/manta.jpg', '/manta2.jpg', '/red-sea.jpg', '/silfra.jpg', '/sipadan.jpg', '/spots-nusa-penida.jpg', '/tulum-2.jpg', '/tulum.jpg', '/wreck.jpg'
+];
+
+interface SpotWithRandomImage extends Spot {
+  randomImage?: string;
+}
+
+function assignRandomImages(spots: Spot[], images: string[]): SpotWithRandomImage[] {
+  const used = new Set<string>();
+  return spots.map((spot) => {
+    if (spot.image) return { ...spot, randomImage: undefined };
+    let available = images.filter((img) => !used.has(img));
+    if (available.length === 0) available = images;
+    const img = available[Math.floor(Math.random() * available.length)];
+    used.add(img);
+    return { ...spot, randomImage: img };
+  });
+}
+
 function chunkArray<T>(arr: T[], size: number): T[][] {
   const result: T[][] = [];
   for (let i = 0; i < arr.length; i += size) {
@@ -106,7 +127,7 @@ export default function SpotsPageClient({ spots, currentPage, totalPages, allSpo
         </div>
 
         {countryList.map((country, idx) => {
-          const countrySpots = spotsByCountry[country].sort((a, b) => a.name.localeCompare(b.name));
+          const countrySpots = assignRandomImages(spotsByCountry[country].sort((a, b) => a.name.localeCompare(b.name)), RANDOM_SPOT_IMAGES);
           return (
             <div
               key={country}
@@ -142,15 +163,12 @@ export default function SpotsPageClient({ spots, currentPage, totalPages, allSpo
                     <Link href={`/spots/${spot.slug}`} className="spot-card-link">
                       <div className="spot-card-image-container">
                         <Image
-                          src={spot.image || '/images/default-spot.jpg'}
+                          src={spot.image || (spot as SpotWithRandomImage).randomImage || '/images/default-spot.jpg'}
                           alt={spot.name}
                           fill
                           className="spot-card-image"
                           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         />
-                        <div className="spot-card-badge">
-                          {spot.level || 'Tous niveaux'}
-                        </div>
                       </div>
                       <div className="spot-card-content">
                         <div className="spot-card-header">

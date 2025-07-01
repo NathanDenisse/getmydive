@@ -307,8 +307,8 @@ export default function HomeClient({ spots, total }: Props) {
           onClick={scrollToMap}
           type="button"
         >
-          <FiMapPin />
-          Voir la carte
+          <FiMapPin style={{ fontSize: 22, marginRight: 10 }} />
+          <span style={{ flex: 1, textAlign: 'center' }}>Afficher la carte</span>
         </button>
       )}
     </main>
