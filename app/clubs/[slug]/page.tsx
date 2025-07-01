@@ -55,3 +55,7 @@ export default async function Page({ params }: any) {
 
   return <ClubDetails {...club} />;
 }
+
+export async function generateStaticParams() {
+  return (clubsData as any[]).map(club => ({ slug: club.slug }));
+}
