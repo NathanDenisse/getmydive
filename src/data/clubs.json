@@ -1,0 +1,405 @@
+[
+  {
+    "slug": "blue-ocean-divers",
+    "name": "Blue Ocean Divers",
+    "country": "Thaïlande",
+    "location": "Koh Tao",
+    "description": "Blue Ocean Divers est un centre francophone installé à Koh Tao depuis plus de 15 ans. Recommandé pour ses formations de qualité, son ambiance chaleureuse et ses spots mythiques comme Chumphon Pinnacle. L'équipe est composée de passionnés attentifs à chaque plongeur. Les infrastructures modernes, le bateau spacieux et le matériel soigné garantissent des plongées confortables et sécurisées. C'est l'adresse idéale pour découvrir ou progresser à Koh Tao.",
+    "image": "/club-blue.jpg",
+    "coords": [
+      10.1617,
+      99.8327
+    ],
+    "trainingSchool": "PADI",
+    "activity": "Plongée",
+    "price": "Moyen",
+    "rating": 4.7,
+    "reviews": [
+      {
+        "author": "Sophie L.",
+        "comment": "Une équipe au top, j'ai passé mon Open Water dans des conditions idéales ! Je recommande à 100%.",
+        "rating": 5
+      },
+      {
+        "author": "Julien D.",
+        "comment": "Très bon club, matériel en bon état, staff très pro. Un peu cher mais ça vaut le coup.",
+        "rating": 4.5
+      }
+    ],
+    "instructors": [
+      {
+        "name": "John Doe",
+        "experience": "10 ans",
+        "speciality": "Plongée profonde",
+        "bio": "John est moniteur PADI depuis plus d'une décennie. Il connaît les moindres recoins de Koh Tao et adore transmettre sa passion pour la plongée technique avec pédagogie et bonne humeur.",
+        "image": "/instructors-john.jpg"
+      },
+      {
+        "name": "Jane Smith",
+        "experience": "5 ans",
+        "speciality": "Plongée découverte",
+        "bio": "Jane a formé des centaines de débutants avec patience et humour. Elle excelle à créer une atmosphère rassurante pour ceux qui plongent pour la première fois.",
+        "image": "/instructors-jane.jpg"
+      }
+    ],
+    "experiences": [
+      {
+        "slug": "plongee-decouverte",
+        "title": "Plongée Découverte",
+        "description": "Une immersion tout en douceur pour les curieux du monde sous-marin. Vous serez encadré par un moniteur expérimenté, dans des conditions optimales. Une activité inoubliable, accessible à partir de 10 ans.",
+        "price": "40€",
+        "level": "Débutant",
+        "activity": "Plongée",
+        "animals": [
+          "Poissons tropicaux",
+          "Coraux"
+        ],
+        "image": "/experience-discovery.jpg",
+        "rating": 4.8,
+        "reviews": [
+          {
+            "author": "Camille R.",
+            "comment": "Une première plongée inoubliable ! Le moniteur était rassurant et passionné.",
+            "rating": 5
+          }
+        ]
+      },
+      {
+        "slug": "plongee-en-autonomie",
+        "title": "Plongée en autonomie",
+        "description": "Pour les plongeurs certifiés à la recherche d'aventure. Explorez les plus beaux sites de Koh Tao avec un guide, dont Sail Rock, un must pour les passionnés.",
+        "price": "70€",
+        "level": "Niveau 2",
+        "activity": "Plongée",
+        "animals": [
+          "Raies",
+          "Requins de récif"
+        ],
+        "image": "/experience-autonomy.jpg",
+        "rating": 4.6,
+        "reviews": [
+          {
+            "author": "Lucas M.",
+            "comment": "Sail Rock incroyable ! Organisation top, équipe au top.",
+            "rating": 5
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "reef-explorer",
+    "name": "Reef Explorer",
+    "country": "Mexique",
+    "location": "Cozumel",
+    "description": "Reef Explorer est spécialisé dans les plongées dérivantes le long de la barrière méso-américaine. Le club est reconnu pour sa sécurité, son professionnalisme et son personnel francophone. Il offre un cadre idyllique pour observer raies mantas, tortues et coraux multicolores.",
+    "image": "/club-reef.jpg",
+    "coords": [
+      20.422983,
+      -86.922343
+    ],
+    "trainingSchool": "PADI",
+    "activity": "Plongée",
+    "price": "Moyen",
+    "rating": 4.5,
+    "reviews": [
+      {
+        "author": "Clément G.",
+        "comment": "Plongée dérivante exceptionnelle ! On flotte au-dessus d'un aquarium géant.",
+        "rating": 4.5
+      }
+    ],
+    "instructors": [
+      {
+        "name": "Carlos Mendez",
+        "experience": "12 ans",
+        "speciality": "Plongée dérivante",
+        "bio": "Carlos est une légende locale à Cozumel. Il connaît chaque courant et adapte parfaitement les plongées selon votre niveau.",
+        "image": "/instructors-carlos.jpg"
+      }
+    ],
+    "experiences": [
+      {
+        "slug": "plongee-derivante",
+        "title": "Plongée Dérivante",
+        "description": "Naviguez au rythme des courants le long de la deuxième plus grande barrière de corail au monde. Cette plongée est fluide, relaxante, et pleine de rencontres inattendues.",
+        "price": "80€",
+        "level": "Niveau 2",
+        "activity": "Plongée",
+        "animals": [
+          "Raies mantas",
+          "Requins de récif"
+        ],
+        "image": "/experience-drift.jpg",
+        "rating": 4.7,
+        "reviews": [
+          {
+            "author": "Nathalie H.",
+            "comment": "Un vrai tapis roulant sous-marin avec une faune exceptionnelle.",
+            "rating": 5
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "tulum-divers",
+    "name": "Tulum Divers",
+    "country": "Mexique",
+    "location": "Tulum",
+    "description": "Tulum Divers propose une expérience unique de plongée dans les cénotes, ces grottes d'eau douce sacrées des Mayas. Le club combine sécurité, exploration et émerveillement dans des environnements incroyablement photogéniques.",
+    "image": "/tulum.jpg",
+    "coords": [
+      20.211,
+      -87.465
+    ],
+    "trainingSchool": "SSI",
+    "activity": "Snorkeling",
+    "price": "Moyen",
+    "rating": 4.6,
+    "reviews": [
+      {
+        "author": "Aurélien F.",
+        "comment": "Les cénotes sont juste magiques. Une expérience mystique et visuellement incroyable.",
+        "rating": 4.6
+      }
+    ],
+    "instructors": [
+      {
+        "name": "Lucia González",
+        "experience": "8 ans",
+        "speciality": "Cénotes et récifs",
+        "bio": "Lucia adore raconter les légendes mayas tout en vous guidant dans les jeux de lumière des cénotes.",
+        "image": "/instructors-lucia.jpg"
+      }
+    ],
+    "experiences": [
+      {
+        "slug": "plongee-cenote",
+        "title": "Plongée dans les Cénotes",
+        "description": "Plongez dans des galeries souterraines aux eaux cristallines. Une lumière magique traverse les puits naturels. Parfait pour les amateurs de beauté naturelle et de calme absolu.",
+        "price": "60€",
+        "level": "Débutant",
+        "activity": "Snorkeling",
+        "animals": [
+          "Poissons d'eau douce",
+          "Coraux"
+        ],
+        "image": "/experience-cenote.jpg",
+        "rating": 4.9,
+        "reviews": [
+          {
+            "author": "Léa Z.",
+            "comment": "Un rêve éveillé. L'eau la plus claire que j'ai jamais vue.",
+            "rating": 5
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "komodo-diving",
+    "name": "Komodo Diving",
+    "country": "Indonésie",
+    "location": "Komodo",
+    "description": "Situé dans un des plus beaux archipels du monde, Komodo Diving propose des croisières et des plongées à la journée dans des sites réputés pour leur biodiversité exceptionnelle. L'équipe est expérimentée, et l'organisation impeccable.",
+    "image": "/komodo.jpg",
+    "coords": [
+      -8.583,
+      119.483
+    ],
+    "trainingSchool": "PADI",
+    "activity": "Plongée",
+    "price": "Élevé",
+    "rating": 4.9,
+    "reviews": [
+      {
+        "author": "Vincent P.",
+        "comment": "L'un des plus beaux endroits où j'ai plongé. Mantas, tortues, requins, tout y est.",
+        "rating": 5
+      }
+    ],
+    "instructors": [
+      {
+        "name": "David Walker",
+        "experience": "15 ans",
+        "speciality": "Plongée avec raies mantas",
+        "bio": "Ancien biologiste marin, David est passionné par les raies mantas. Il partage volontiers ses connaissances avant et après chaque plongée.",
+        "image": "/instructors-david.jpg"
+      }
+    ],
+    "experiences": [
+      {
+        "slug": "plongee-raies-mantas",
+        "title": "Plongée avec Raies Mantas",
+        "description": "Nagez au milieu des majestueuses raies mantas dans les eaux limpides de Komodo. Un moment suspendu dans le bleu, avec parfois jusqu'à 10 mantas en même temps.",
+        "price": "100€",
+        "level": "Avancé",
+        "activity": "Plongée",
+        "animals": [
+          "Raies mantas",
+          "Requins de récif",
+          "Poissons tropicaux"
+        ],
+        "image": "/experience-manta.jpg",
+        "rating": 5,
+        "reviews": [
+          {
+            "author": "Sarah J.",
+            "comment": "J'en ai pleuré d'émotion. Merci à toute l'équipe, c'était parfait.",
+            "rating": 5
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "manta-dive-center",
+    "name": "Manta Dive Center",
+    "country": "Indonésie",
+    "location": "Nusa Penida",
+    "description": "Situé face à l'océan à Nusa Penida, Manta Dive Center propose des plongées spectaculaires avec raies mantas et formations certifiantes. Encadrement francophone disponible.",
+    "image": "/manta.jpg",
+    "coords": [
+      -8.7274,
+      115.5444
+    ],
+    "trainingSchool": "SSI",
+    "activity": "Plongée",
+    "price": "Élevé",
+    "rating": 4.8,
+    "reviews": [
+      {
+        "author": "Julie D.",
+        "comment": "Plongées inoubliables avec les mantas. Encadrement très pro !",
+        "rating": 5
+      },
+      {
+        "author": "Martin L.",
+        "comment": "Un must si vous êtes à Bali. Organisation top et équipe super sympa.",
+        "rating": 4.7
+      }
+    ],
+    "instructors": [
+      {
+        "name": "Wayan Putra",
+        "experience": "12 ans",
+        "speciality": "Raies mantas et dérivantes",
+        "image": "/instructors-wayan.jpg"
+      }
+    ],
+    "experiences": [
+      {
+        "slug": "manta-encounter",
+        "title": "Rencontre avec les mantas",
+        "description": "Une plongée encadrée sur Manta Point, pour observer les majestueuses raies mantas dans leur habitat naturel.",
+        "price": "90€",
+        "level": "Intermédiaire",
+        "activity": "Plongée",
+        "animals": [
+          "Raies mantas"
+        ],
+        "image": "/manta2.jpg",
+        "rating": 4.9,
+        "reviews": [
+          {
+            "author": "Sophie B.",
+            "comment": "Magique ! Les mantas sont si proches !",
+            "rating": 5
+          }
+        ]
+      },
+      {
+        "slug": "formation-ssi-open-water",
+        "title": "Formation Open Water (SSI)",
+        "description": "Apprenez à plonger en toute sécurité avec cette formation complète en 3 jours. Certificat reconnu mondialement.",
+        "price": "390€",
+        "level": "Débutant",
+        "activity": "Plongée",
+        "animals": [
+          "Poissons tropicaux"
+        ],
+        "image": "/fish.jpg",
+        "rating": 4.7,
+        "reviews": [
+          {
+            "author": "Nicolas C.",
+            "comment": "Pédagogie, fun, et sécurité. Merci à l'équipe !",
+            "rating": 5
+          }
+        ]
+      },
+      {
+        "slug": "plongee-derive-cristal-bay",
+        "title": "Plongée dérivante à Crystal Bay",
+        "description": "Un site connu pour ses courants et ses paysages sous-marins fabuleux. Recommandé aux plongeurs expérimentés.",
+        "price": "80€",
+        "level": "Avancé",
+        "activity": "Plongée",
+        "animals": [
+          "Tortues",
+          "Poissons tropicaux"
+        ],
+        "image": "/wreck.jpg",
+        "rating": 4.6,
+        "reviews": [
+          {
+            "author": "Léa T.",
+            "comment": "Top site ! Très technique, mais incroyablement beau.",
+            "rating": 4.5
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "dive-kingdom",
+    "name": "Dive Kingdom",
+    "country": "Mexique",
+    "location": "Playa del Carmen",
+    "description": "Centre de plongée premium offrant des expériences personnalisées dans les cénotes et la barrière de corail. Équipe internationale d'instructeurs passionnés.",
+    "image": "/club-dive-kingdom.jpg",
+    "trainingSchool": "PADI 5 Star IDC",
+    "rating": 4.8
+  },
+  {
+    "slug": "oceanic-divers",
+    "name": "Oceanic Divers",
+    "country": "Indonésie",
+    "location": "Bali",
+    "description": "Club familial spécialisé dans les plongées avec les raies mantas et les requins. Propose des formations de tous niveaux dans un cadre idyllique.",
+    "image": "/club-oceanic.jpg",
+    "trainingSchool": "SSI Diamond",
+    "rating": 4.9
+  },
+  {
+    "slug": "blue-depths",
+    "name": "Blue Depths",
+    "country": "Belize",
+    "location": "Ambergris Caye",
+    "description": "Centre de plongée exclusif offrant des expéditions vers le Blue Hole et la barrière de corail. Équipement de pointe et bateaux confortables.",
+    "image": "/club-blue.jpg",
+    "trainingSchool": "PADI 5 Star",
+    "rating": 4.7
+  },
+  {
+    "slug": "reef-explorers",
+    "name": "Reef Explorers",
+    "country": "Mexique",
+    "location": "Cozumel",
+    "description": "Club spécialisé dans les plongées dérivantes sur la barrière méso-américaine. Instructeurs locaux expérimentés et service personnalisé.",
+    "image": "/club-reef.jpg",
+    "trainingSchool": "PADI 5 Star IDC",
+    "rating": 4.6
+  },
+  {
+    "slug": "bali-dive-center",
+    "name": "Bali Dive Center",
+    "country": "Indonésie",
+    "location": "Nusa Penida",
+    "description": "Centre de plongée écologique engagé dans la protection des raies mantas. Propose des formations et des plongées responsables.",
+    "image": "/club-bali.jpg",
+    "trainingSchool": "SSI Platinum",
+    "rating": 4.9
+  }
+]

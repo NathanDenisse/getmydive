@@ -1,0 +1,72 @@
+[
+  {
+    "slug": "decouverte-cenotes",
+    "title": "Découverte des Cénotes",
+    "description": "Une introduction magique aux cénotes de Tulum. Plongez dans des eaux cristallines entourées de formations géologiques uniques et découvrez l'histoire maya.",
+    "image": "/experience-cenote.jpg",
+    "animals": [
+      "Poissons d'eau douce",
+      "Tortues"
+    ],
+    "level": "Débutant",
+    "price": "80€",
+    "rating": 4.8,
+    "clubSlug": "dive-kingdom"
+  },
+  {
+    "slug": "plongee-dérivante-cozumel",
+    "title": "Plongée Dérivante Cozumel",
+    "description": "Explorez la barrière méso-américaine en plongée dérivante. Un spectacle sous-marin exceptionnel avec une abondance de vie marine.",
+    "image": "/experience-drift.jpg",
+    "animals": [
+      "Poissons tropicaux",
+      "Tortues",
+      "Raies"
+    ],
+    "level": "Intermédiaire",
+    "price": "90€",
+    "rating": 4.9,
+    "clubSlug": "reef-explorers"
+  },
+  {
+    "slug": "expedition-blue-hole",
+    "title": "Expédition Blue Hole",
+    "description": "Une aventure unique vers le Blue Hole de Belize. Plongez dans ce cratère sous-marin mythique et découvrez ses stalactites et sa faune pélagique.",
+    "image": "/experience-discovery.jpg",
+    "animals": [
+      "Requins de récif",
+      "Poissons pélagiques"
+    ],
+    "level": "Avancé",
+    "price": "150€",
+    "rating": 4.7,
+    "clubSlug": "blue-depths"
+  },
+  {
+    "slug": "manta-safari",
+    "title": "Manta Safari",
+    "description": "Rencontrez les majestueuses raies mantas dans leur environnement naturel. Une expérience inoubliable dans les eaux de Nusa Penida.",
+    "image": "/experience-manta.jpg",
+    "animals": [
+      "Raies mantas",
+      "Poissons de récif"
+    ],
+    "level": "Intermédiaire",
+    "price": "120€",
+    "rating": 4.9,
+    "clubSlug": "bali-dive-center"
+  },
+  {
+    "slug": "formation-avancee",
+    "title": "Formation Avancée",
+    "description": "Perfectionnez vos compétences de plongée avec notre formation avancée. Navigation, plongée profonde et gestion de la flottabilité.",
+    "image": "/experience-autonomy.jpg",
+    "animals": [
+      "Faune variée"
+    ],
+    "level": "Avancé",
+    "price": "200€",
+    "rating": 4.8,
+    "clubSlug": "oceanic-divers"
+  }
+]

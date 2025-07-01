@@ -1,0 +1,37 @@
+export interface Spot {
+  id?: number;
+  slug: string;
+  name: string;
+  country: string;
+  description: string;
+  image: string;
+  coords: [number, number];
+  animals: string[];
+  level: string;
+  activity: string;
+  price: string;
+  temperature: number;
+  visibility: number;
+  current: string;
+  depthRange: string;
+  bestSeason: string;
+  category: string;
+  location: string;
+  region?: string;
+  accessibility?: string;
+  infrastructure: string[];
+  marine_reserve: boolean;
+  certification_required: string[];
+  max_depth?: number;
+  min_depth?: number;
+  dive_sites?: string[];
+  local_operators?: string[];
+  conservation_status?: string;
+  weather_conditions?: string;
+  local_language?: string[];
+  currency?: string;
+  timezone?: string;
+  website?: string;
+  phone?: string;
+  email?: string;
+} 
