@@ -268,7 +268,7 @@ export default function HomeClient({ spots, total }: Props) {
           </Link>
         </div>
         <div className="carousel-container" ref={spotsCarouselRef}>
-          {previewSpots.map((spot, i) => (
+          {(query ? filteredSpotsWithFilters : previewSpots).map((spot, i) => (
             <div key={spot.slug || i} className="carousel-item">
               <SpotCard spot={spot} randomImage={RANDOM_SPOT_IMAGES[i % RANDOM_SPOT_IMAGES.length]} index={i} />
             </div>
