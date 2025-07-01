@@ -900,48 +900,53 @@ button:hover,
 
   .main,
   main {
-    padding: 1rem 1rem;
+    padding: 1.2rem 2vw;
   }
 
-  .home-title {
-    font-size: 1.2rem;
-    margin-bottom: 1.1rem;
+  .carousel-section {
+    padding-left: 2vw;
+    padding-right: 2vw;
+    margin-bottom: 2.2rem;
   }
 
-  .searchbar-container {
-    margin-bottom: 1.1rem;
+  .carousel-item {
+    border-radius: 22px;
+    box-shadow: 0 2px 12px rgba(44, 62, 80, 0.08);
+    background: #fff;
+    margin-right: 1.2rem;
   }
 
-  .filters-container {
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-    gap: 0.2rem;
+  .spot-card-image-container {
+    height: 200px;
+    border-radius: 20px 20px 0 0;
   }
 
-  .cards-container,
-  .experiences-grid,
-  .spots-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-    padding: 0 0.5rem;
-    margin-bottom: 1.5rem;
+  .spot-card-link {
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(44, 62, 80, 0.08);
+    background: #fff;
   }
 
+  .carousel-title,
   .section-title {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
+    font-size: 1.35rem;
+    margin-bottom: 1.1rem;
   }
 
-  .reviews-section,
-  .instructors-section,
-  .experiences-section {
-    margin-bottom: 1rem;
+  .home-header {
+    padding-left: 2vw;
+    padding-right: 2vw;
   }
 
-  .floating-map-btn {
-    bottom: 0.7rem;
-    padding: 0.7rem 1.1rem;
-    font-size: 0.95rem;
+  .carousel-container {
+    padding-bottom: 0.5rem;
+  }
+
+  .carousel-section {
+    background: #f6fbfd;
+    border-radius: 18px;
+    box-shadow: 0 2px 8px rgba(44, 62, 80, 0.04);
   }
 }
 

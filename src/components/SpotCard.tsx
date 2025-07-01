@@ -7,9 +7,10 @@ import type { Spot } from '../types';
 
 type Props = {
   spot: Spot;
+  randomImage?: string;
 };
 
-export default function SpotCard({ spot }: Props) {
+export default function SpotCard({ spot, randomImage }: Props) {
   if (!spot) return null;
 
   const {
@@ -25,7 +26,7 @@ export default function SpotCard({ spot }: Props) {
     <Link href={`/spots/${slug}`} className="spot-card-link">
       <div className="spot-card-image-container">
         <Image
-          src={image || '/images/default-spot.jpg'}
+          src={image || randomImage || '/images/default-spot.jpg'}
           alt={name}
           fill
           className="spot-card-image"

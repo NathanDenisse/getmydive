@@ -77,6 +77,29 @@ function getExampleSpots(spots: Spot[]) {
 
 const PREVIEW_COUNT = 10;
 
+// Liste d'images aléatoires pour les spots
+const RANDOM_SPOT_IMAGES = [
+  '/blue-hole.jpg', '/club-bali.jpg', '/club-blue.jpg', '/club-dive-kingdom.jpg', '/club-oceanic.jpg', '/club-reef.jpg', '/cozumel.jpg', '/experience-autonomy.jpg', '/experience-cenote.jpg', '/experience-discovery.jpg', '/experience-drift.jpg', '/experience-manta.jpg', '/fish.jpg', '/galapagos.jpg', '/great-barrier-reef.jpg', '/komodo.jpg', '/manta.jpg', '/manta2.jpg', '/red-sea.jpg', '/silfra.jpg', '/sipadan.jpg', '/spots-nusa-penida.jpg', '/tulum-2.jpg', '/tulum.jpg', '/wreck.jpg'
+];
+
+// Étendre le type Spot localement pour inclure randomImage
+interface SpotWithRandomImage extends Spot {
+  randomImage?: string;
+}
+
+// Fonction pour attribuer une image aléatoire à chaque spot sans image (évite les doublons dans la preview)
+function assignRandomImages(spots: Spot[], images: string[]): SpotWithRandomImage[] {
+  const used = new Set<string>();
+  return spots.map((spot) => {
+    if (spot.image) return { ...spot, randomImage: undefined };
+    let available = images.filter((img) => !used.has(img));
+    if (available.length === 0) available = images;
+    const img = available[Math.floor(Math.random() * available.length)];
+    used.add(img);
+    return { ...spot, randomImage: img };
+  });
+}
+
 export default function HomeClient({ spots, total }: Props) {
   const [showMap, setShowMap] = useLocalStorage<boolean>(CACHE_KEYS.SHOW_MAP, true);
   const { query, filteredSpots, handleSearch, clearSearch } = useSearch(spots);
@@ -151,9 +174,9 @@ export default function HomeClient({ spots, total }: Props) {
     return true;
   });
 
-  // Prévisualisation des spots
+  // Remplacer previewSpots par une version avec images aléatoires
   const previewSpots = useMemo(() =>
-    filteredSpotsWithFilters.slice(0, PREVIEW_COUNT),
+    assignRandomImages(filteredSpotsWithFilters.slice(0, PREVIEW_COUNT), RANDOM_SPOT_IMAGES),
     [filteredSpotsWithFilters]
   );
 
@@ -218,7 +241,7 @@ export default function HomeClient({ spots, total }: Props) {
         <div className="carousel-container" ref={spotsCarouselRef}>
           {previewSpots.map((spot) => (
             <div key={spot.slug} className="carousel-item">
-              <SpotCard spot={spot} />
+              <SpotCard spot={spot} randomImage={(spot as SpotWithRandomImage).randomImage} />
             </div>
           ))}
         </div>
