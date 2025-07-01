@@ -9,6 +9,7 @@ const MapSection = dynamic(() => import("@/components/sections/MapSection"), { s
 
 import SearchBar from "@/components/SearchBar";
 import { Spot } from '@/scripts/types';
+import { Club } from '@/lib/supabase/clubs';
 
 const SPOTS_PER_PAGE = 40;
 const CAROUSEL_SIZE = 10;
@@ -82,9 +83,10 @@ type Props = {
   currentPage: number;
   totalPages: number;
   allSpots?: Spot[];
+  allClubs?: Club[];
 };
 
-export default function SpotsPageClient({ spots, currentPage, totalPages, allSpots }: Props) {
+export default function SpotsPageClient({ spots, currentPage, totalPages, allSpots, allClubs }: Props) {
   const [searchQuery, setSearchQuery] = useState("");
   const [showMap, setShowMap] = useState(false);
   const [userCountry, setUserCountry] = useState<string | null>(null);
@@ -192,8 +194,8 @@ export default function SpotsPageClient({ spots, currentPage, totalPages, allSpo
                     <Link href={`/spots/${spot.slug}`} className="spot-card-link">
                       <div className="spot-card-image-container">
                         <Image
-                          src={(!spot.image || spot.image.trim() === '' || spot.image.includes('default-spot.jpg'))
-                            ? RANDOM_SPOT_IMAGES[i % RANDOM_SPOT_IMAGES.length]
+                          src={(!spot.image || spot.image.trim() === '' || spot.image.includes('default-spot.jpg') || spot.image.includes('default.jpg'))
+                            ? spot.randomImage || RANDOM_SPOT_IMAGES[i % RANDOM_SPOT_IMAGES.length]
                             : spot.image}
                           alt={spot.name}
                           fill
@@ -228,13 +230,24 @@ export default function SpotsPageClient({ spots, currentPage, totalPages, allSpo
           <div className="mb-12 mt-12">
             <MapSection
               center={[20.422983, -86.922343]}
-              markers={filteredSpots
-                .filter(spot => Array.isArray(spot.coords) && spot.coords[0] != null && spot.coords[1] != null)
-                .map((spot) => ({
-                  position: spot.coords,
-                  label: spot.name,
-                }))
-              }
+              markers={[
+                // Spots avec coordonnées valides
+                ...filteredSpots
+                  .filter(spot => Array.isArray(spot.coords) && spot.coords[0] != null && spot.coords[1] != null)
+                  .map((spot) => ({
+                    position: spot.coords,
+                    label: `🏊 ${spot.name}`,
+                    type: 'spot'
+                  })),
+                // Clubs avec coordonnées valides
+                ...(allClubs || [])
+                  .filter(club => Array.isArray(club.coords) && club.coords[0] != null && club.coords[1] != null)
+                  .map((club) => ({
+                    position: club.coords,
+                    label: `🏊‍♂️ ${club.name}`,
+                    type: 'club'
+                  }))
+              ]}
             />
           </div>
         )}
