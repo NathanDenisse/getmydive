@@ -79,7 +79,31 @@ const PREVIEW_COUNT = 10;
 
 // Liste d'images aléatoires pour les spots
 const RANDOM_SPOT_IMAGES = [
-  '/blue-hole.jpg', '/club-bali.jpg', '/club-blue.jpg', '/club-dive-kingdom.jpg', '/club-oceanic.jpg', '/club-reef.jpg', '/cozumel.jpg', '/experience-autonomy.jpg', '/experience-cenote.jpg', '/experience-discovery.jpg', '/experience-drift.jpg', '/experience-manta.jpg', '/fish.jpg', '/galapagos.jpg', '/great-barrier-reef.jpg', '/komodo.jpg', '/manta.jpg', '/manta2.jpg', '/red-sea.jpg', '/silfra.jpg', '/sipadan.jpg', '/spots-nusa-penida.jpg', '/tulum-2.jpg', '/tulum.jpg', '/wreck.jpg'
+  '/blue-hole.jpg',
+  '/club-bali.jpg',
+  '/club-blue.jpg',
+  '/club-dive-kingdom.jpg',
+  '/club-oceanic.jpg',
+  '/club-reef.jpg',
+  '/cozumel.jpg',
+  '/experience-autonomy.jpg',
+  '/experience-cenote.jpg',
+  '/experience-discovery.jpg',
+  '/experience-drift.jpg',
+  '/experience-manta.jpg',
+  '/fish.jpg',
+  '/galapagos.jpg',
+  '/great-barrier-reef.jpg',
+  '/komodo.jpg',
+  '/manta.jpg',
+  '/manta2.jpg',
+  '/red-sea.jpg',
+  '/silfra.jpg',
+  '/sipadan.jpg',
+  '/spots-nusa-penida.jpg',
+  '/tulum-2.jpg',
+  '/tulum.jpg',
+  '/wreck.jpg',
 ];
 
 // Étendre le type Spot localement pour inclure randomImage
