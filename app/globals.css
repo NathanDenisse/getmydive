@@ -932,34 +932,35 @@ button:hover,
   }
 
   .carousel-section {
-    padding: 0.5rem 0;
-    margin-bottom: 0.7rem;
+    padding: 0.2rem 0;
+    margin-bottom: 0.2rem;
     background: transparent;
   }
 
   .carousel-header {
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.1rem;
   }
 
   .carousel-title {
-    font-size: 1rem;
+    font-size: 0.93rem;
     font-weight: 500;
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.1rem;
   }
 
   .carousel-container {
-    gap: 0.2rem;
-    padding-bottom: 0.1rem;
+    gap: 0.1rem;
+    padding-bottom: 0.05rem;
+    overflow-x: hidden;
   }
 
   .carousel-item {
-    width: 98vw;
-    min-width: 98vw;
-    max-width: 98vw;
-    margin: 0.4rem auto;
+    width: 96vw;
+    min-width: 96vw;
+    max-width: 96vw;
+    margin: 0.2rem auto;
     padding: 0;
-    border-radius: 14px;
-    box-shadow: 0 1px 6px rgba(44, 62, 80, 0.05);
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(44, 62, 80, 0.04);
     background: #fff;
   }
 
@@ -967,67 +968,68 @@ button:hover,
   .club-card-link,
   .experience-card-link {
     width: 100%;
-    margin: 0.4rem auto;
-    box-shadow: 0 1px 6px rgba(44, 62, 80, 0.05);
-    border-radius: 14px;
+    margin: 0.2rem auto;
+    box-shadow: 0 1px 3px rgba(44, 62, 80, 0.04);
+    border-radius: 10px;
     padding: 0;
+    display: block;
   }
 
   .spot-card-image-container,
   .club-card-image-container,
   .experience-card-image-container {
-    height: 80px;
-    border-radius: 14px 14px 0 0;
+    height: 60px;
+    border-radius: 10px 10px 0 0;
     overflow: hidden;
   }
 
   .spot-card-content,
   .club-card-content,
   .experience-card-content {
-    padding: 0.5rem;
+    padding: 0.3rem;
   }
 
   .spot-card-title,
   .club-card-title,
   .experience-card-title {
-    font-size: 0.93rem;
+    font-size: 0.85rem;
     font-weight: 600;
-    margin-bottom: 0.1rem;
+    margin-bottom: 0.05rem;
   }
 
   .spot-card-desc,
   .club-card-desc,
   .experience-card-desc {
-    font-size: 0.78rem;
-    margin-bottom: 0.1rem;
+    font-size: 0.7rem;
+    margin-bottom: 0.05rem;
   }
 
   .spot-card-country,
   .club-card-location {
-    font-size: 0.75rem;
+    font-size: 0.65rem;
   }
 
   .spot-animal-badge,
   .club-card-badge {
-    font-size: 0.7rem;
-    padding: 0.13rem 0.5rem;
+    font-size: 0.6rem;
+    padding: 0.1rem 0.3rem;
   }
 
   .mb-8,
   .mb-16,
   .mb-12 {
-    margin-bottom: 0.5rem !important;
+    margin-bottom: 0.2rem !important;
   }
 
   .home-header,
   .compact-header {
-    padding: 0.5rem 0 0.2rem 0;
-    margin-bottom: 0.1rem;
+    padding: 0.2rem 0 0.1rem 0;
+    margin-bottom: 0;
   }
 
   .clubs-indicator {
-    margin: 0.1rem 0 0.4rem 0;
-    font-size: 0.93rem;
+    margin: 0.05rem 0 0.2rem 0;
+    font-size: 0.85rem;
   }
 }
 
