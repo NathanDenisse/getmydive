@@ -276,12 +276,6 @@ export default function HomeClient({ spots, total }: Props) {
         </div>
       </section>
 
-      {/* Indicateur clubs */}
-      <div className="clubs-indicator">
-        <span className="clubs-indicator-arrow">↓</span>
-        <span className="clubs-indicator-text">Découvrez aussi les clubs de plongée plus bas !</span>
-      </div>
-
       {/* Carrousel des clubs */}
       <section className="carousel-section">
         <div className="carousel-header">
