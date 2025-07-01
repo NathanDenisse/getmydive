@@ -25,7 +25,9 @@ export default function SpotCard({ spot, randomImage, index }: Props) {
 
   const isDefault = !image || image.trim() === '' || image.includes('default-spot.jpg');
   const imageToShow = isDefault ? randomImage || '/images/default-spot.jpg' : image;
-  console.log('SpotCard image debug:', { image, randomImage, slug, imageToShow });
+  console.log(
+    `SpotCard image debug: index=${index}, slug=${slug}, image=${image}, randomImage=${randomImage}, imageToShow=${imageToShow}`
+  );
 
   return (
     <Link href={`/spots/${slug}`} className="spot-card-link">
