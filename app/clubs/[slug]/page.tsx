@@ -43,7 +43,7 @@ type Club = {
   }[];
 };
 
-export default function ClubPage({ params }: { params: { slug: string } }) {
+export default async function ClubPage({ params }: { params: { slug: string } }) {
   const clubs = (clubsData as any[]).map((club) => ({
     ...club,
     coords: club.coords as [number, number],
