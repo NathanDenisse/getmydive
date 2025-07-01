@@ -87,15 +87,24 @@ interface SpotWithRandomImage extends Spot {
   randomImage?: string;
 }
 
-// Fonction pour attribuer une image aléatoire à chaque spot sans image (évite les doublons dans la preview)
-function assignRandomImages(spots: Spot[], images: string[]): SpotWithRandomImage[] {
-  const used = new Set<string>();
-  return spots.map((spot) => {
+// Fonction utilitaire pour mélanger un tableau (Fisher-Yates)
+function shuffleArray<T>(array: T[]): T[] {
+  const arr = [...array];
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
+// Nouvelle fonction d'attribution d'images aléatoires, stable pour chaque rendu
+function assignRandomImagesStable(spots: Spot[], images: string[]): SpotWithRandomImage[] {
+  const shuffled = shuffleArray(images);
+  let imgIdx = 0;
+  return spots.map((spot, i) => {
     if (spot.image) return { ...spot, randomImage: undefined };
-    let available = images.filter((img) => !used.has(img));
-    if (available.length === 0) available = images;
-    const img = available[Math.floor(Math.random() * available.length)];
-    used.add(img);
+    const img = shuffled[imgIdx % shuffled.length];
+    imgIdx++;
     return { ...spot, randomImage: img };
   });
 }
@@ -176,7 +185,7 @@ export default function HomeClient({ spots, total }: Props) {
 
   // Remplacer previewSpots par une version avec images aléatoires
   const previewSpots = useMemo(() =>
-    assignRandomImages(filteredSpotsWithFilters.slice(0, PREVIEW_COUNT), RANDOM_SPOT_IMAGES),
+    assignRandomImagesStable(filteredSpotsWithFilters.slice(0, PREVIEW_COUNT), RANDOM_SPOT_IMAGES),
     [filteredSpotsWithFilters]
   );
 
@@ -306,9 +315,10 @@ export default function HomeClient({ spots, total }: Props) {
           className="floating-map-button"
           onClick={scrollToMap}
           type="button"
+          aria-label="Afficher la carte"
         >
-          <FiMapPin style={{ fontSize: 22, marginRight: 10 }} />
-          <span style={{ flex: 1, textAlign: 'center' }}>Afficher la carte</span>
+          <FiMapPin style={{ fontSize: 18, marginRight: 6 }} />
+          <span style={{ flex: 1, textAlign: 'center' }}>Carte</span>
         </button>
       )}
     </main>
