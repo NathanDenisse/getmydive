@@ -187,12 +187,14 @@ export default function SpotsPageClient({ spots, currentPage, totalPages, allSpo
                 ref={el => { carouselRefs.current[idx] = el; }}
                 className="carousel-container"
               >
-                {countrySpots.map((spot) => (
-                  <div key={spot.slug} className="carousel-item">
+                {countrySpots.map((spot, i) => (
+                  <div key={spot.slug || i} className="carousel-item">
                     <Link href={`/spots/${spot.slug}`} className="spot-card-link">
                       <div className="spot-card-image-container">
                         <Image
-                          src={spot.image || (spot as SpotWithRandomImage).randomImage || '/images/default-spot.jpg'}
+                          src={(!spot.image || spot.image.trim() === '' || spot.image.includes('default-spot.jpg'))
+                            ? RANDOM_SPOT_IMAGES[i % RANDOM_SPOT_IMAGES.length]
+                            : spot.image}
                           alt={spot.name}
                           fill
                           className="spot-card-image"
@@ -209,8 +211,8 @@ export default function SpotsPageClient({ spots, currentPage, totalPages, allSpo
                         </div>
                         <p className="spot-card-desc ellipsis-2l">{spot.description}</p>
                         <div className="spot-card-animals">
-                          {spot.animals?.slice(0, 3).map((animal, i) => (
-                            <span key={i} className="spot-animal-badge">{animal}</span>
+                          {spot.animals?.slice(0, 3).map((animal, j) => (
+                            <span key={j} className="spot-animal-badge">{animal}</span>
                           ))}
                         </div>
                       </div>
