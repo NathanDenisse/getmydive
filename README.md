@@ -74,3 +74,4 @@ Ce projet est configuré pour être déployé automatiquement sur Netlify via Gi
 - [Documentation Next.js](https://nextjs.org/docs)
 - [Documentation Netlify](https://docs.netlify.com)
 - [Documentation Supabase](https://supabase.com/docs)
+# Redéploiement avec variables d'environnement
