@@ -23,7 +23,7 @@ export default function SpotCard({ spot, randomImage, index }: Props) {
     animals,
   } = spot;
 
-  const isDefault = !image || image.trim() === '' || image.includes('default-spot.jpg');
+  const isDefault = !image || image.trim() === '' || image.includes('default-spot.jpg') || image.includes('default.jpg');
   const imageToShow = isDefault ? randomImage || '/images/default-spot.jpg' : image;
   console.log(
     `SpotCard image debug: index=${index}, slug=${slug}, image=${image}, randomImage=${randomImage}, imageToShow=${imageToShow}`
