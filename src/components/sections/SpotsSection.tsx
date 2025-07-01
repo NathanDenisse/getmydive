@@ -35,7 +35,7 @@ export default function SpotsSection({ spots }: Props) {
       </div>
       <div className="horizontal-scroll-container">
         {spots.map((spot) => (
-          <SpotCard key={spot.slug} {...spot} coords={spot.coords} />
+          <SpotCard key={spot.slug} spot={spot} />
         ))}
       </div>
     </section>
