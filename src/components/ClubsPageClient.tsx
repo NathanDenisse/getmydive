@@ -68,7 +68,12 @@ export default function ClubsPageClient({ clubs }: Props) {
         <h1 className="section-title text-center mb-8">Clubs de Plongée</h1>
         <SearchBar
           onSearch={setSearchQuery}
-          onFilter={setFilters}
+          onFilter={(filters) => setFilters({
+            country: "",
+            trainingSchool: "",
+            activity: filters.activity ?? "",
+            priceRange: filters.priceRange ?? ""
+          })}
         />
         <div className="clubs-grid">
           {filteredClubs.map((club) => (
