@@ -18,18 +18,38 @@ export async function getAllSpots({ pageSize = 50, page = 1 }: GetAllSpotsParams
 }
 
 export async function getSpotSlugs(): Promise<string[]> {
-  const { data, error } = await supabase
-    .from('spots')
-    .select('slug')
-    .order('created_at', { ascending: false })
+  try {
+    const { data, error } = await supabase
+      .from('spots')
+      .select('slug')
+      .order('created_at', { ascending: false })
 
-  if (error) throw error
-  return data.map((spot) => spot.slug)
+    if (error) {
+      console.error('Erreur Supabase getSpotSlugs:', error)
+      return []
+    }
+
+    return data?.map((spot) => spot.slug) ?? []
+  } catch (error) {
+    console.error('Erreur lors de la récupération des slugs:', error)
+    return []
+  }
 }
 
 export async function getSpotBySlug(slug: string) {
-  const { data } = await supabase.from('spots').select('*').eq('slug', slug).single()
-  return data
+  try {
+    const { data, error } = await supabase.from('spots').select('*').eq('slug', slug).single()
+
+    if (error) {
+      console.error(`Erreur Supabase getSpotBySlug pour ${slug}:`, error)
+      return null
+    }
+
+    return data
+  } catch (error) {
+    console.error(`Erreur lors de la récupération du spot ${slug}:`, error)
+    return null
+  }
 }
 
 export async function getClubSlugs(): Promise<string[]> {
