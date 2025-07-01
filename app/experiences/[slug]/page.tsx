@@ -8,7 +8,8 @@ export async function generateStaticParams() {
   );
 }
 
-export default function ExperiencePage({ params }: { params: { slug: string } }) {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export default async function Page({ params }: any) {
   const experience = (clubs || [])
     .flatMap((club) =>
       (club.experiences || []).map((exp) => ({
