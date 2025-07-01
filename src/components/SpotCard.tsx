@@ -8,9 +8,10 @@ import type { Spot } from '../types';
 type Props = {
   spot: Spot;
   randomImage?: string;
+  index?: number;
 };
 
-export default function SpotCard({ spot, randomImage }: Props) {
+export default function SpotCard({ spot, randomImage, index }: Props) {
   if (!spot) return null;
 
   const {
@@ -39,7 +40,7 @@ export default function SpotCard({ spot, randomImage }: Props) {
       </div>
       <div className="spot-card-content">
         <div className="spot-card-header">
-          <h3 className="spot-card-title">{name}</h3>
+          <h3 className="spot-card-title">{name} {typeof index !== 'undefined' && <span style={{ color: '#888', fontSize: '0.8em' }}>#{index}</span>}</h3>
           <span className="spot-card-country">
             <FiMapPin className="spot-card-icon" />
             {country}

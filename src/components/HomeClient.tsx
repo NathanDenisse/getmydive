@@ -232,6 +232,8 @@ export default function HomeClient({ spots, total }: Props) {
     });
   };
 
+  console.log('SPOTS_AFFICHES', previewSpots.map((s, i) => ({ i, slug: s.slug, name: s.name, image: s.randomImage })));
+
   if (!spots || spots.length === 0) {
     return (
       <div className="no-results">
@@ -269,7 +271,7 @@ export default function HomeClient({ spots, total }: Props) {
         <div className="carousel-container" ref={spotsCarouselRef}>
           {previewSpots.map((spot, i) => (
             <div key={spot.slug || i} className="carousel-item">
-              <SpotCard spot={spot} randomImage={RANDOM_SPOT_IMAGES[i % RANDOM_SPOT_IMAGES.length]} />
+              <SpotCard spot={spot} randomImage={RANDOM_SPOT_IMAGES[i % RANDOM_SPOT_IMAGES.length]} index={i} />
             </div>
           ))}
         </div>
